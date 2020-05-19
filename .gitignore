@@ -30,4 +30,6 @@ build/
 ### VS Code ###
 .vscode/
 
+### Spring Extra Ignores ###
 src/main/resources/application.properties
+.DS_Store
