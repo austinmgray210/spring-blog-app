@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html land="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Roll Dice</title>
+    <div th:replace="partials/partials :: head" />
+</head>
+<body>
+<div th:replace="partials/partials :: top_banner"></div>
+<div th:replace="partials/partials :: standard_nav"></div>
+
+<div class="container">
+
+    <h2>Dice guess Page</h2>
+
+<!--    show results-->
+    <div th:unless="${first_guess}">
+        <h3 th:text="${header}">header</h3>
+        <h4>
+            The roll was <span th:text="${dice.die1}"/>, <span th:text="${dice.die2}"/>:
+            <span th:text="${dice.result}"/>
+        </h4>
+    </div>
+
+    <h3>Make your guess</h3>
+    <a href="/roll-dice-once/2" class="btn btn-info">2</a>
+    <a href="/roll-dice-once/3" class="btn btn-info">3</a>
+    <a href="/roll-dice-once/4" class="btn btn-info">4</a>
+    <a href="/roll-dice-once/5" class="btn btn-info">5</a>
+    <a href="/roll-dice-once/6" class="btn btn-info">6</a>
+    <a href="/roll-dice-once/7" class="btn btn-info">7</a>
+    <a href="/roll-dice-once/8" class="btn btn-info">8</a>
+    <a href="/roll-dice-once/9" class="btn btn-info">9</a>
+    <a href="/roll-dice-once/10" class="btn btn-info">10</a>
+    <a href="/roll-dice-once/11" class="btn btn-info">11</a>
+    <a href="/roll-dice-once/12" class="btn btn-info">12</a><br>
+
+</div>
+
+<div th:replace="partials/partials :: footer_nav"></div>
+<div th:replace="partials/partials :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+.top_banner {
+    font-size: 5rem;
+    text-align: center;
+    background-color: aqua;
+    border-color: black;
+    border-style: double;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    background-color: aqua;
+    color: black;
+    text-align: center;
+}
+
+.footer > .navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.footer > .navbar {min-height:32px !important}

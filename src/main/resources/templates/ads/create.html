@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ads</title>
+    <div th:replace="partials/partials :: head"/>
+</head>
+<body>
+<div th:replace="partials/partials :: top_banner"></div>
+<div th:replace="partials/partials :: standard_nav"></div>
+
+<div class="container">
+    <h2>Create Ad</h2>
+
+    <form th:action="@{/ads/create}" th:method="post" th:object="${ad}">
+        <input type="hidden" th:field="*{id}" />
+        <label for="title">Title: </label>
+        <input type="text" th:field="*{title}"  id="title" class="field"/>
+        <br><br>
+        <label for="desc">Description:</label><br>
+        <textarea th:field="*{description}" id="desc" class="field" rows="4" cols="50"></textarea><br>
+        <button>Save</button>
+    </form>
+</div>
+
+<div th:replace="partials/partials :: footer_nav"/>
+<div th:replace="partials/partials :: footer"/>
+</body>
+</html>

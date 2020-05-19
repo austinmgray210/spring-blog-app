@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Posts</title>
+    <div th:replace="partials/partials :: head"/>
+</head>
+<body>
+<nav th:replace="partials/partials :: navbar"/>
+
+<div class="container">
+    <h2>Edit Post</h2>
+
+    <form th:action="@{/posts/edit}" th:method="post" th:object="${post}">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{user}" class="field"/>
+        <label for="title">Title: </label>
+        <input type="text" th:field="*{title}" id="title" class="field" th:value="${post.title}"/>
+        <br><br>
+        <label for="body">Body:</label><br>
+        <textarea th:field="*{body}" id="body" class="field" rows="4" cols="50" th:text="${post.body}"></textarea><br>
+        <button>Save Changes</button>
+    </form>
+</div>
+
+<div th:replace="partials/partials :: footer"/>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result of Dice Roll</title>
+    <div th:replace="partials/partials :: head" />
+</head>
+<body>
+<div th:replace="partials/partials :: top_banner"></div>
+<div th:replace="partials/partials :: standard_nav"></div>
+
+<div class="container">
+
+    <heading>
+        <h1>Here are your result</h1>
+    </heading>
+    <h3 th:text="${header}"></h3>
+    <div th:each="diceSet: ${dice}">
+        The roll <span th:text="${diceSetStat.index + 1}"/> result was <span th:text="${diceSet.die1}"/>,
+        <span th:text="${diceSet.die2}"./> <span th:text="${diceSet.result}" />
+    </div>
+
+    <h3 th:text="${message}"></h3>
+
+    <nav th:replace="roll_guess :: roll-guess"/>
+</div>
+
+<div th:replace="partials/partials :: footer_nav"></div>
+<div th:replace="partials/partials :: footer"></div>
+</body>
+</html>
